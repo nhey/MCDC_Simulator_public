@@ -89,13 +89,13 @@ void CylinderGammaDistribution::createGammaSubstrate()
     for (unsigned i=0; i< num_obstacles; ++i) {
 
         if(tried > 10000){
-            string message = " Radii distribution cannot be sampled [Min. radius Error]\n";
+            string message = " Radii distribution cannot be sampled [Min./Max. radius Error]\n";
             SimErrno::error(message,cout);
             assert(0);
         }
         double jkr =  distribution(generator);
 
-        if(jkr< this->min_radius){
+        if(jkr< this->min_radius || jkr > 7){
             i--;
             tried++;
             continue;
