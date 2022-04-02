@@ -1023,9 +1023,10 @@ void SimErrno::checkOuputPrefixAndWriteInfo(Parameters &params)
 {
     info("Checking Ouput format...",cout);
 
-    if(checkFileExist(params.output_base_name+"_simulation_info.txt")){
-        appendRepetitionLabel(params);
-    }
+    // Overwrite files.
+    // if(checkFileExist(params.output_base_name+"_simulation_info.txt")){
+    //     appendRepetitionLabel(params);
+    // }
 
     ofstream out(params.output_base_name+"_simulation_info.txt");
 
